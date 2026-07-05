@@ -19,6 +19,23 @@ project report, rebuilt with a modern toolchain and made genuinely runnable. See
 report. (Tip: drop your report PDF at `docs/capstone-report.pdf` to keep it
 alongside the code.)
 
+## Background
+
+Cloud computing is convenient, but it forces a hard trade-off: the moment you
+upload a file, the cloud provider's servers, and therefore the provider's staff,
+technically hold the keys to it. Users lose visibility into where their data
+lives and who can read it, and any access from inside the provider's environment
+looks legitimate even when it is not. The report frames this as the core problem:
+data owners need a way to control access to their own data in a public cloud,
+where access is restricted to the owner and nobody else.
+
+This project answers that with a simple idea. Instead of trusting the cloud host
+to police access, it puts a separate authenticator in front of the cloud. Only
+requests that carry a token issued by that authenticator are treated as valid, so
+a request originating inside the cloud (for example, a curious host) is unstamped
+and rejected. The result is an extra, owner-controlled layer of privacy on top of
+whatever the cloud provider already offers.
+
 ## What it does
 
 Public cloud users have to trust that the cloud provider won't read their data.
