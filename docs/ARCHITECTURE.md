@@ -7,8 +7,8 @@ the original capstone report.
 
 In a public cloud, the provider controls the servers, so users must *trust* the
 provider not to read their data. This project inserts an **independent
-authenticator** between the user and the cloud. Because the authenticator — not
-the cloud host — issues and verifies the token that gates every request, a
+authenticator** between the user and the cloud. Because the authenticator - not
+the cloud host - issues and verifies the token that gates every request, a
 transaction originating *inside* the cloud environment (e.g. an over-curious
 host) is unstamped and therefore invalid.
 
@@ -16,30 +16,30 @@ host) is unstamped and therefore invalid.
 
 ### 1. Authenticator (Flask backend)
 
-- **`config.py`** — all runtime configuration is read from environment variables
+- **`config.py`** - all runtime configuration is read from environment variables
   (`.env` supported), so nothing sensitive is hard-coded.
-- **`database.py`** — a minimal SQLite layer built on the standard library. It
+- **`database.py`** - a minimal SQLite layer built on the standard library. It
   stores users (with salted password hashes) and their files. A context-managed
   `connect()` helper guarantees connections are committed *and closed* (important
   on Windows, where a leaked connection locks the DB file).
-- **`auth.py`** — registration, login (token issuance), logout (token
+- **`auth.py`** - registration, login (token issuance), logout (token
   revocation) and profile lookup.
-- **`protected.py`** — the token-gated cloud resources. Ownership is enforced
+- **`protected.py`** - the token-gated cloud resources. Ownership is enforced
   here: reading another user's file returns `403`.
-- **`face.py`** — an optional proxy to CompreFace for biometric verification.
-- **`__init__.py`** — the application factory wires up CORS, the JWT manager, and
+- **`face.py`** - an optional proxy to CompreFace for biometric verification.
+- **`__init__.py`** - the application factory wires up CORS, the JWT manager, and
   the JWT lifecycle callbacks that produce the report's exact status codes.
 
 ### 2. Web app (React frontend)
 
-- **`api.js`** — a small `fetch` wrapper. It reads/writes the token in
+- **`api.js`** - a small `fetch` wrapper. It reads/writes the token in
   `sessionStorage` and attaches `Authorization: Bearer <token>` to authenticated
-  calls — the mechanism at the heart of the report.
-- **`auth/AuthContext.jsx`** — React context that holds the session, syncs the
+  calls - the mechanism at the heart of the report.
+- **`auth/AuthContext.jsx`** - React context that holds the session, syncs the
   token from session storage on load, and exposes `login` / `logout`.
-- **`pages/`** — Home, Login, Dashboard (the "user account interface"), and the
+- **`pages/`** - Home, Login, Dashboard (the "user account interface"), and the
   post-logout "Thank you" screen from the report's snapshots.
-- **`components/ProtectedRoute.jsx`** — redirects unauthenticated users to login.
+- **`components/ProtectedRoute.jsx`** - redirects unauthenticated users to login.
 
 ## Token lifecycle & status codes
 
@@ -58,7 +58,7 @@ These mirror Chapter 7 (Implementation) and Chapter 9 (Testing) of the report.
 
 The goal is a faithful, self-contained reference that anyone can clone and run in
 under two minutes. SQLite needs no server, and an in-process revocation set is
-enough to demonstrate genuine server-side logout. The [roadmap](../README.md#-roadmap--future-enhancements)
+enough to demonstrate genuine server-side logout. The [roadmap](../README.md#roadmap)
 notes what to swap in for a production deployment (Redis, object storage, refresh
 tokens).
 

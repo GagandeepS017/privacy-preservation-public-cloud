@@ -1,4 +1,4 @@
-"""Protected resource routes — these require a valid access token.
+"""Protected resource routes - these require a valid access token.
 
 This mirrors the report's core idea: the *cloud* resources can only be reached
 by presenting a token stamped by our authenticator. No token -> 401. Someone

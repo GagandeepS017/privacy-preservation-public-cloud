@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS files (
 def connect() -> Iterator[sqlite3.Connection]:
     """Yield a connection that always commits on success and always closes.
 
-    ``with sqlite3.connect(...)`` only commits — it does not close — which on
+    ``with sqlite3.connect(...)`` only commits - it does not close - which on
     Windows leaves the database file locked. This wrapper guarantees closure.
     """
     conn = sqlite3.connect(Config.DB_PATH)
@@ -69,7 +69,7 @@ def _seed_demo_user() -> None:
     )
     # Give the demo user a couple of sample "cloud" files to browse.
     add_file(user_id, "welcome.txt", "Your private cloud files live here.")
-    add_file(user_id, "notes.md", "# Notes\nOnly you can read this — not even the host.")
+    add_file(user_id, "notes.md", "# Notes\nOnly you can read this - not even the host.")
 
 
 # --- Users ---------------------------------------------------------------

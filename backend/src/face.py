@@ -1,4 +1,4 @@
-"""Optional biometric layer — a thin proxy to Exadel CompreFace.
+"""Optional biometric layer - a thin proxy to Exadel CompreFace.
 
 The report adds a second factor: a face-verification token that is concatenated
 with the password-based JWT to raise the security bar. CompreFace is a heavy

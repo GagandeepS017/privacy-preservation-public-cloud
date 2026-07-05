@@ -43,7 +43,7 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className="btn primary" type="submit" disabled={busy}>
-          {busy ? "Signing in…" : "Login"}
+          {busy ? "Signing in..." : "Login"}
         </button>
         <p className="hint">
           Demo account: <code>test</code> / <code>test</code>

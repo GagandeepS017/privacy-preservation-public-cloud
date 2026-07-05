@@ -9,7 +9,7 @@ export default function Home() {
       <div className="shield">🔐</div>
       <h1>Welcome to the Cloud System</h1>
       <p className="lead">
-        An extra layer of authentication that keeps your cloud files private —
+        An extra layer of authentication that keeps your cloud files private -
         so that not even the cloud host can read them without your token.
       </p>
 
@@ -23,7 +23,7 @@ export default function Home() {
         <a href="https://github.com/exadel-inc/CompreFace" target="_blank" rel="noreferrer">
           Read documentation
         </a>
-        <span className="dot">•</span>
+        <span className="dot">|</span>
         <a href="https://bmsce.ac.in" target="_blank" rel="noreferrer">
           About our college (BMSCE)
         </a>
