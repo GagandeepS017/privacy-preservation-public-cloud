@@ -1,0 +1,227 @@
+:root {
+  --bg: #0d1117;
+  --panel: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --muted: #9198a1;
+  --accent: #2f81f7;
+  --accent-hover: #4a90ff;
+  --success-bg: #12261e;
+  --success-border: #2ea043;
+  --error-bg: #2a1215;
+  --error-border: #f85149;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* --- Navbar ------------------------------------------------------------ */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+/* --- Buttons ----------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+}
+
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn.big {
+  padding: 12px 28px;
+  font-size: 1.05rem;
+  margin-top: 8px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- Layout ------------------------------------------------------------ */
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+
+.center {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 8px 0 12px;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto 24px;
+}
+
+.shield {
+  font-size: 3.4rem;
+  margin-bottom: 8px;
+}
+
+.links {
+  margin: 22px 0;
+  color: var(--muted);
+}
+
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.dot {
+  margin: 0 10px;
+  color: var(--border);
+}
+
+/* --- Cards & forms ----------------------------------------------------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 380px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.card.wide {
+  max-width: 560px;
+}
+
+.card h2,
+.card h3 {
+  margin: 0 0 6px;
+  text-align: center;
+}
+
+input {
+  padding: 11px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.98rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+code {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-size: 0.85em;
+}
+
+/* --- Banners ----------------------------------------------------------- */
+.banner {
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 16px auto;
+  max-width: 560px;
+  font-size: 0.95rem;
+}
+
+.banner.success {
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+}
+
+.banner.error {
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+}
+
+/* --- File list --------------------------------------------------------- */
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+
+.file-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.file-list li:last-child {
+  border-bottom: none;
+}
+
+.file-date {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
